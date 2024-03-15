@@ -93,13 +93,11 @@ class LinkedList:
       return self.append(value)
     
     new_node = Node(value)
-    pre = self.head
     temp = self.head
-    for i in range(index):
-      pre = temp
+    for i in range(index-1):
       temp = temp.next
-    new_node.next = temp
-    pre.next = new_node
+    new_node.next = temp.next
+    temp.next = new_node
     self.length += 1
     return True
 
@@ -113,5 +111,5 @@ myList.append(3)
 myList.append(4)
 myList.print_list()
 print()
-print(myList.insert(2,100))
+print(myList.insert(3,100))
 myList.print_list()

@@ -91,22 +91,19 @@ class LinkedList:
       return self.prepend(value)
     if index == self.length:
       return self.append(value)
-    
     new_node = Node(value)
     temp = self.get(index - 1)
     new_node.next = temp.next
     temp.next = new_node
+    self.length += 1
     return True
 
 
 
 
 
-myList = LinkedList(1)
+myList = LinkedList(0)
 myList.append(2)
-myList.append(3)
-myList.append(4)
-myList.print_list()
-print()
-print(myList.insert(3,100))
+myList.insert(1,1)
+
 myList.print_list()

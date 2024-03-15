@@ -81,7 +81,8 @@ class LinkedList:
     temp = self.get(index)
     if temp:  # test to see of temp is actually pointing to something or the index is not within the range
       temp.value = value
-    return True
+      return True
+    return False
 
 
 myList = LinkedList(1)

@@ -79,7 +79,8 @@ class LinkedList:
 
   def set_value(self, index, value):
     temp = self.get(index)
-    temp.value = value
+    if temp:  # test to see of temp is actually pointing to something or the index is not within the range
+      temp.value = value
     return True
 
 

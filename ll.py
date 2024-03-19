@@ -132,5 +132,7 @@ myList = LinkedList(0)
 myList.append(2)
 myList.insert(1,1)
 
-myList.remove(1)
+myList.print_list()
+
+myList.reverse()
 myList.print_list()

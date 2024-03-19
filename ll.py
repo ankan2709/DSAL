@@ -99,29 +99,26 @@ class LinkedList:
     return True
   
 
-def remove(self, index):
-  if index < 0 or index >= self.length:
-    return None
-  if index == 0:
-    self.popFirst()
-  if index == self.length - 1:
-    self.pop()
-  prev = self.get(index-1)
-  temp = prev.next    # takes O(1) time instead of another self.get which is O(n)
-  prev.next = temp.next
-  temp.next = None
-  self.length -= 1
-  return temp
+  def remove(self, index):
+    if index < 0 or index >= self.length:
+      return None
+    if index == 0:
+      self.popFirst()
+    if index == self.length - 1:
+      self.pop()
+    prev = self.get(index-1)
+    temp = prev.next    # takes O(1) time instead of another self.get which is O(n)
+    prev.next = temp.next
+    temp.next = None
+    self.length -= 1
+    return temp
 
   
-
-
-
-
 
 
 myList = LinkedList(0)
 myList.append(2)
 myList.insert(1,1)
 
+myList.remove(1)
 myList.print_list()

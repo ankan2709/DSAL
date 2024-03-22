@@ -69,7 +69,7 @@ class LinkedList:
 
     return temp
 
-  def get(self, index):
+  def get(self, index):  # returns a pointer and not a node
     if index < 0 or index >= self.length:
       return None
     temp = self.head

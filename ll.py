@@ -125,14 +125,29 @@ class LinkedList:
       before = temp
       temp = after
 
+  def find_middle_node(self):
+    if self.head is None:
+      return None
+    fast = self.head
+    slow = self.head
+    while fast is not None and fast.next is not None:
+      slow = slow.next
+      fast = fast.next.next
+    return slow.value
+
+  
+
   
 
 
 myList = LinkedList(0)
+myList.append(1)
 myList.append(2)
-myList.insert(1,1)
+myList.append(3)
+myList.append(4)
+myList.append(5)
 
-myList.print_list()
+# myList.print_list()
+print(myList.find_middle_node())
 
-myList.reverse()
-myList.print_list()
+

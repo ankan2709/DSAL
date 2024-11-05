@@ -134,6 +134,21 @@ class LinkedList:
       slow = slow.next
       fast = fast.next.next
     return slow.value
+  
+  def hasCycle(self):
+    if self.head is None:
+      return None
+    visited = []
+    temp = self.head
+    while temp.next is not None:
+      if temp in visited:
+        return True
+      else:
+        visited.append(temp)
+        temp = temp.next
+    return False
+
+
 
   
 
@@ -149,5 +164,6 @@ myList.append(5)
 
 # myList.print_list()
 print(myList.find_middle_node())
+print(myList.hasCycle())
 
 

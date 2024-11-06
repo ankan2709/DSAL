@@ -55,4 +55,32 @@ def numDecodings(s: str) -> int:
     return solve(0, s, n)
 
 # s = "12"
-# print(numDecodings(s))
+
+
+class Solution {
+public:
+    int n;
+    
+    int solve(int i, vector<int>& coins, int amount) {
+        
+        if(amount == 0)
+            return t[i][amount] = 1;
+        
+        if(i == n || amount < 0)
+            return 0;
+        
+        if(coins[i] > amount)
+            return solve(i+1, coins, amount);
+        
+        int take = solve(i, coins, amount-coins[i]);
+        int skip = solve(i+1, coins, amount);
+        
+        return take+skip;
+        
+    }
+    
+    int change(int amount, vector<int>& coins) {
+        n = coins.size();
+        return solve(0, coins, amount);
+    }
+};

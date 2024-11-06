@@ -1,18 +1,19 @@
 def squareRoot(num):
-    i = 0
-    left = 0
+    if num == 0:
+        return 0
+    left = 1
     right = num
-    res = -1
+    res = 0
     while left <= right:
         mid = (left + right) // 2
 
-        if mid*mid == num:
-            return mid
-        elif mid*mid < num:
+        square = mid*mid
+
+        if square <= num:
             res = mid
-            left = mid 
+            l = mid + 1
         else:
-            right = mid - 1
+            r = mid - 1
     return res
 
 print(squareRoot(9))

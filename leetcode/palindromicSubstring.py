@@ -6,7 +6,7 @@
 
 
 
-# # brute force
+# # brute force n^2.n = n^3
 
 def isPalidrome(s):
     l = 0
